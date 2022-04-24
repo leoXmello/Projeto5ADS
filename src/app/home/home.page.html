@@ -1,0 +1,23 @@
+<ion-content>
+  <ion-toolbar>
+    <ion-title>Lista de Tarefas</ion-title>
+  </ion-toolbar>
+
+  <div class="task-not-found-container" *ngIf="tasks.length == 0">
+    <span class="task-not-found">
+      Crie sua Tarefa
+    </span>
+  </div>
+
+  <div class="card" *ngFor="let task of tasks">
+    <span class="card-title" [innerText]="task.name"></span>
+    <div class="action-buttons">
+      <ion-icon name="trash-outline" color="danger" style="margin-bottom: 10px;" (click)="deleteTask(task.id)"></ion-icon>
+    </div>
+  </div>
+
+  <div class="insert-task-container">
+    <input type="text" name="task" id="task" placeholder="Digite aqui" [(ngModel)]="taskName" (keyup.enter)="insertTask(taskName)">
+    <button (click)="insertTask(taskName)">Inserir</button>
+  </div>
+</ion-content>
