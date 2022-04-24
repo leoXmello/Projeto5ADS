@@ -29,11 +29,4 @@ export class HomePage {
     this.taskName = '';
   }
 
-  deleteTask(id: string) {
-    const newTasksArray: TaskInterface[] = this.tasks.filter((el: TaskInterface) => el.id != id);
-
-    this.tasks = newTasksArray;
-  }
-
-
 }
