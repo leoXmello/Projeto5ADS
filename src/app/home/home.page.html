@@ -17,6 +17,7 @@
 
   <div class="insert-task-container">
     <input type="text" name="task" id="task" placeholder="Digite aqui" [(ngModel)]="taskName" (keyup.enter)="insertTask(taskName)">
+    <ion-icon name="create-outline" color="success" (click)="openEditTask(task)"></ion-icon>
     <button (click)="insertTask(taskName)">Inserir</button>
   </div>
 </ion-content>
